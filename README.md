@@ -102,13 +102,27 @@ From the PCs, test the remote LANs. For example, PC-LAN1 should be able to ping:
 VLSM-192.168.5.0-24/
 ├── README.md
 ├── .gitignore
+│
+├── topology/
+│   ├── VLSM_Topology.png
+│   ├── VLSM_192.168.5.0_24.pkt
+│   └── README.md
+│
 ├── configs/
 │   ├── R1-config.txt
 │   └── R2-config.txt
+│
 └── docs/
     ├── addressing-table.md
     └── verification.md
 ```
+
+### Packet Tracer Project
+
+The `topology/` folder is intended to contain the completed Cisco Packet Tracer `.pkt` project.
+
+**Important:** The supplied image is included as `VLSM_Topology.png`. The actual `.pkt` file must be saved from Cisco Packet Tracer after you build/configure the topology, then placed in the `topology/` folder.
+
 
 ## Skills Demonstrated
 
