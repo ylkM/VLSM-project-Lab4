@@ -1,0 +1,37 @@
+! R2 - VLSM Lab
+! 192.168.5.0/24
+!
+enable
+configure terminal
+
+hostname R2
+
+! LAN3 - 14 hosts
+interface GigabitEthernet0/0
+ description LAN3 - 192.168.5.192/28
+ ip address 192.168.5.206 255.255.255.240
+ no shutdown
+ exit
+
+! LAN4 - 9 hosts
+interface GigabitEthernet0/1
+ description LAN4 - 192.168.5.208/28
+ ip address 192.168.5.222 255.255.255.240
+ no shutdown
+ exit
+
+! Point-to-point connection to R1
+interface GigabitEthernet0/0/0
+ description R2-to-R1 - 192.168.5.224/30
+ ip address 192.168.5.226 255.255.255.252
+ no shutdown
+ exit
+
+! Static route to LAN2
+ip route 192.168.5.0 255.255.255.128 192.168.5.225
+
+! Static route to LAN1
+ip route 192.168.5.128 255.255.255.192 192.168.5.225
+
+end
+write memory
